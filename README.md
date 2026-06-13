@@ -2,6 +2,8 @@
 
 A turn-based space strategy game inspired by Galactic Civilizations. Navigate star systems connected by travel lanes, command fleets, and expand your empire.
 
+![Game Screenshot](Screenshot-wip.png)
+
 ## Features
 
 - **Turn-Based System**: Each faction gets 3 ship moves per turn
