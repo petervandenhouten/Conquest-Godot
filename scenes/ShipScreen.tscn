@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://desqgp0if0iug"]
+
+[ext_resource type="Script" path="res://scripts/ship_screen.gd" id="1_ship_screen"]
+
+[node name="ShipScreen" type="Control" unique_id=945457798]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ship_screen")
+
+[node name="Panel" type="Panel" parent="." unique_id=696566705]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShipName" type="Label" parent="Panel" unique_id=2045566439]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 780.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 28
+text = "Ship Name"
+horizontal_alignment = 1
+
+[node name="ShipImage" type="ColorRect" parent="Panel" unique_id=1257725123]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 420.0
+offset_bottom = 380.0
+color = Color(0.15, 0.15, 0.2, 1)
+
+[node name="ShipVisual" type="Label" parent="Panel/ShipImage" unique_id=623706881]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -15.0
+offset_right = 50.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "▲ SHIP ▲"
+horizontal_alignment = 1
+
+[node name="MountedSystemsLabel" type="Label" parent="Panel/ShipImage" unique_id=110173518]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 390.0
+offset_bottom = 40.0
+text = "Mounted Systems"
+horizontal_alignment = 1
+
+[node name="StatusLabel" type="Label" parent="Panel" unique_id=1221335118]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 80.0
+offset_right = 780.0
+offset_bottom = 200.0
+text = "Energy: 100/100
+Defence: 0
+Weapons: 0
+Energy Systems: 0"
+
+[node name="CombatLabel" type="Label" parent="Panel" unique_id=177282859]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 210.0
+offset_right = 780.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 18
+text = "Combat Strength: 10"
+
+[node name="SystemsPanel" type="VBoxContainer" parent="Panel" unique_id=858685006]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 250.0
+offset_right = 780.0
+offset_bottom = 380.0
+theme_override_constants/separation = 10
+
+[node name="DefenceButton" type="Button" parent="Panel/SystemsPanel" unique_id=645851867]
+layout_mode = 2
+text = "Add Defence System (Cost: 40)"
+
+[node name="WeaponButton" type="Button" parent="Panel/SystemsPanel" unique_id=705831272]
+layout_mode = 2
+text = "Add Weapon System (Cost: 50)"
+
+[node name="EnergyButton" type="Button" parent="Panel/SystemsPanel" unique_id=503458817]
+layout_mode = 2
+text = "Add Energy System (Cost: 35)"
+
+[node name="ReturnButton" type="Button" parent="Panel" unique_id=1587708173]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 540.0
+offset_right = 180.0
+offset_bottom = 580.0
+text = "Return to Galaxy Map"
+
+[node name="InfoLabel" type="Label" parent="Panel" unique_id=1061692039]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 400.0
+offset_right = 420.0
+offset_bottom = 520.0
+text = "Upgrade your ship with systems:
+Defence - Increases shield strength
+Weapons - Increases attack power
+Energy - Increases energy capacity"
+autowrap_mode = 3

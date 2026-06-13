@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://b8icjimvnxbga"]
+
+[ext_resource type="Script" path="res://scripts/planet_screen.gd" id="1_planet_screen"]
+
+[node name="PlanetScreen" type="Control" unique_id=1691482788]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_planet_screen")
+
+[node name="Panel" type="Panel" parent="." unique_id=1582517533]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlanetName" type="Label" parent="Panel" unique_id=2034448337]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 780.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 28
+text = "Planet Name"
+horizontal_alignment = 1
+
+[node name="PlanetImage" type="ColorRect" parent="Panel" unique_id=250100964]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 420.0
+offset_bottom = 380.0
+color = Color(0.2, 0.3, 0.5, 1)
+
+[node name="PlanetSurfaceLabel" type="Label" parent="Panel/PlanetImage" unique_id=1189321593]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -15.0
+offset_right = 100.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Planet Surface View"
+horizontal_alignment = 1
+
+[node name="StatusLabel" type="Label" parent="Panel" unique_id=801518502]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 80.0
+offset_right = 780.0
+offset_bottom = 220.0
+text = "Energy: 0/100
+Defence: 0
+Research: 0
+Construction: 0"
+
+[node name="BuildingsPanel" type="VBoxContainer" parent="Panel" unique_id=1842656058]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 240.0
+offset_right = 780.0
+offset_bottom = 380.0
+theme_override_constants/separation = 10
+
+[node name="DefenceButton" type="Button" parent="Panel/BuildingsPanel" unique_id=338281944]
+layout_mode = 2
+text = "Build Defence System (Cost: 50)"
+
+[node name="ResearchButton" type="Button" parent="Panel/BuildingsPanel" unique_id=1629294788]
+layout_mode = 2
+text = "Build Research System (Cost: 60)"
+
+[node name="EnergyButton" type="Button" parent="Panel/BuildingsPanel" unique_id=1503762414]
+layout_mode = 2
+text = "Build Energy System (Cost: 40)"
+
+[node name="ReturnButton" type="Button" parent="Panel" unique_id=516076224]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 540.0
+offset_right = 180.0
+offset_bottom = 580.0
+text = "Return to Galaxy Map"
+
+[node name="InfoLabel" type="Label" parent="Panel" unique_id=2066332825]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 400.0
+offset_right = 420.0
+offset_bottom = 631.0
+scale = Vector2(0.98060584, 1.0005133)
+text = "Build facilities to improve your planet:
+Defence - Increases combat strength
+Research - Generates research points
+Energy - Increases energy production"
+autowrap_mode = 3

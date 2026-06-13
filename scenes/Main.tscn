@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bib82u6aqn57c"]
+
+[ext_resource type="Script" uid="uid://k1ots6ni1ke8" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/GalaxyMap.tscn" id="2_galaxymap"]
+[ext_resource type="PackedScene" path="res://scenes/Starfield.tscn" id="3_starfield"]
+
+[node name="Main" type="Node2D" unique_id=157178848]
+script = ExtResource("1_main")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=703510340]
+
+[node name="Starfield" parent="." unique_id=688434640 instance=ExtResource("3_starfield")]
+
+[node name="GalaxyMap" parent="." unique_id=603154444 instance=ExtResource("2_galaxymap")]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1373246380]
+
+[node name="TopBar" type="Panel" parent="UI" unique_id=2033213906]
+offset_right = 1280.0
+offset_bottom = 32.0
+
+[node name="SystemLabel" type="Label" parent="UI/TopBar" unique_id=1606123375]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 6.0
+offset_right = 400.0
+offset_bottom = 26.0
+text = "GALAXY MAP"
+
+[node name="TurnLabel" type="Label" parent="UI/TopBar" unique_id=1601411507]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 6.0
+offset_right = 800.0
+offset_bottom = 26.0
+text = "Turn: Player Empire | Moves: 3/3"
+
+[node name="EndTurnButton" type="Button" parent="UI/TopBar" unique_id=720387560]
+custom_minimum_size = Vector2(160, 26)
+layout_mode = 0
+offset_left = 1100.0
+offset_top = 3.0
+offset_right = 1270.0
+offset_bottom = 29.0
+theme_override_font_sizes/font_size = 13
+text = "End Turn"
+
+[node name="InfoPanel" type="Panel" parent="UI" unique_id=1404832477]
+visible = false
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 250.0
+offset_bottom = 200.0
+
+[node name="PlanetName" type="Label" parent="UI/InfoPanel" unique_id=951975957]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 230.0
+offset_bottom = 30.0
+text = "Planet: None"
+
+[node name="FactionLabel" type="Label" parent="UI/InfoPanel" unique_id=1132415733]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 35.0
+offset_right = 230.0
+offset_bottom = 55.0
+text = "Faction: Neutral"
+
+[node name="ConnectionsLabel" type="Label" parent="UI/InfoPanel" unique_id=1399070556]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 60.0
+offset_right = 230.0
+offset_bottom = 80.0
+text = "Connections: 0"

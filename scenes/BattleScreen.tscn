@@ -1,0 +1,303 @@
+[gd_scene format=3 uid="uid://r5r8ogokb2dn"]
+
+[ext_resource type="Script" path="res://scripts/battle_screen.gd" id="1_battle_screen"]
+
+[node name="BattleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_battle_screen")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.15, 0.25, 1)
+
+[node name="PlanetSurface" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.3, 0.25, 0.2, 1)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlanetName" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 20.0
+offset_right = 200.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Battle at Planet"
+horizontal_alignment = 1
+
+[node name="DefenderShipVisual" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 520.0
+offset_right = 150.0
+offset_bottom = 620.0
+color = Color(0.8, 0.3, 0.3, 1)
+
+[node name="DefenderLabel" type="Label" parent="Panel/DefenderShipVisual"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -15.0
+offset_right = 30.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "◄ DEF"
+horizontal_alignment = 1
+
+[node name="AttackerShipVisual" type="ColorRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -620.0
+offset_right = -50.0
+offset_bottom = -520.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0.3, 0.3, 0.8, 1)
+
+[node name="AttackerLabel" type="Label" parent="Panel/AttackerShipVisual"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -15.0
+offset_right = 30.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ATK ►"
+horizontal_alignment = 1
+
+[node name="DefenderPanel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 420.0
+offset_bottom = 450.0
+
+[node name="FactionLabel" type="Label" parent="Panel/DefenderPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 390.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 20
+text = "DEFENDER: Faction Name"
+
+[node name="ShipStats" type="Label" parent="Panel/DefenderPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 390.0
+offset_bottom = 90.0
+text = "Attack: 10 | Shield: 0
+Energy: 100"
+
+[node name="ShieldLabel" type="Label" parent="Panel/DefenderPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 110.0
+offset_right = 390.0
+offset_bottom = 135.0
+text = "Allocate Energy to Shield:"
+
+[node name="ShieldSlider" type="HSlider" parent="Panel/DefenderPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 140.0
+offset_right = 390.0
+offset_bottom = 170.0
+max_value = 100.0
+tick_count = 11
+ticks_on_borders = true
+
+[node name="WeaponLabel" type="Label" parent="Panel/DefenderPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 180.0
+offset_right = 390.0
+offset_bottom = 205.0
+text = "Allocate Energy to Weapons:"
+
+[node name="WeaponSlider" type="HSlider" parent="Panel/DefenderPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 210.0
+offset_right = 390.0
+offset_bottom = 240.0
+max_value = 100.0
+tick_count = 11
+ticks_on_borders = true
+
+[node name="AllocationLabel" type="Label" parent="Panel/DefenderPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 250.0
+offset_right = 390.0
+offset_bottom = 290.0
+text = "Shield: 0 | Weapon: 0
+Total: 0/100"
+
+[node name="ConfirmButton" type="Button" parent="Panel/DefenderPanel"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 300.0
+offset_right = 290.0
+offset_bottom = 340.0
+text = "Confirm Allocation"
+
+[node name="AttackerPanel" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -420.0
+offset_top = 100.0
+offset_right = -20.0
+offset_bottom = 450.0
+grow_horizontal = 0
+
+[node name="FactionLabel" type="Label" parent="Panel/AttackerPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 390.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 20
+text = "ATTACKER: Faction Name"
+
+[node name="ShipStats" type="Label" parent="Panel/AttackerPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 390.0
+offset_bottom = 90.0
+text = "Attack: 10 | Shield: 0
+Energy: 100"
+
+[node name="ShieldLabel" type="Label" parent="Panel/AttackerPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 110.0
+offset_right = 390.0
+offset_bottom = 135.0
+text = "Allocate Energy to Shield:"
+
+[node name="ShieldSlider" type="HSlider" parent="Panel/AttackerPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 140.0
+offset_right = 390.0
+offset_bottom = 170.0
+max_value = 100.0
+tick_count = 11
+ticks_on_borders = true
+
+[node name="WeaponLabel" type="Label" parent="Panel/AttackerPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 180.0
+offset_right = 390.0
+offset_bottom = 205.0
+text = "Allocate Energy to Weapons:"
+
+[node name="WeaponSlider" type="HSlider" parent="Panel/AttackerPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 210.0
+offset_right = 390.0
+offset_bottom = 240.0
+max_value = 100.0
+tick_count = 11
+ticks_on_borders = true
+
+[node name="AllocationLabel" type="Label" parent="Panel/AttackerPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 250.0
+offset_right = 390.0
+offset_bottom = 290.0
+text = "Shield: 0 | Weapon: 0
+Total: 0/100"
+
+[node name="ConfirmButton" type="Button" parent="Panel/AttackerPanel"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 300.0
+offset_right = 290.0
+offset_bottom = 340.0
+text = "Confirm Allocation"
+
+[node name="ResultLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -100.0
+offset_right = 250.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "BATTLE RESULTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ContinueButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -80.0
+offset_right = 100.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Continue"

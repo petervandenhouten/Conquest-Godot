@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://c5nxm8hjk4vqr"]
+
+[ext_resource type="Script" path="res://scripts/game_over_screen.gd" id="1_game_over_screen"]
+
+[node name="GameOverScreen" type="Control" unique_id=1691482789]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_game_over_screen")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=1691482790]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7)
+
+[node name="Panel" type="Panel" parent="." unique_id=1582517534]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -180.0
+offset_right = 300.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverTitle" type="Label" parent="Panel" unique_id=2034448338]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 580.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 36
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="WinnerLabel" type="Label" parent="Panel" unique_id=2034448339]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 580.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 28
+text = "Faction Name Wins!"
+horizontal_alignment = 1
+
+[node name="TurnsLabel" type="Label" parent="Panel" unique_id=801518503]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 180.0
+offset_right = 580.0
+offset_bottom = 210.0
+theme_override_font_sizes/font_size = 20
+text = "Total Turns: 0"
+horizontal_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="Panel" unique_id=516076225]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 280.0
+offset_right = 400.0
+offset_bottom = 330.0
+theme_override_font_sizes/font_size = 18
+text = "Return to Menu"

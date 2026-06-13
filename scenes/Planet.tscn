@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/planet.gd" id="1_planet"]
+
+[node name="Planet" type="Node2D"]
+script = ExtResource("1_planet")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+
+[node name="SelectionRing" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.4, 0.8, 1.0, 0.8)
+
+[node name="Label" type="Label" parent="."]
+offset_top = 25.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
